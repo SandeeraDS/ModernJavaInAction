@@ -26,6 +26,11 @@ public class Main {
         System.out.println("using written methods");
         test1.filterApple(inventory, Main::isGreenApple);
         test1.filterApple(inventory, Main::isHeavyApple);
+        Main main = new Main();
+
+        // using instance
+        test1.filterApple(inventory,  main::isGreenApple1);
+        test1.filterApple(inventory, main::isHeavyApple1);
 
         // using Streams
         System.out.println("using Streams");
@@ -77,6 +82,15 @@ public class Main {
     public static boolean isHeavyApple(Apple a) {
         return a.getWeight() > 100;
     }
+
+    public  boolean isGreenApple1(Apple a) {
+        return Common.GREEN.equals(a.getColour());
+    }
+
+    public  boolean isHeavyApple1(Apple a) {
+        return a.getWeight() > 100;
+    }
+
 
 
 
